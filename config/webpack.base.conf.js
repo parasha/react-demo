@@ -26,7 +26,7 @@ const config = {
       { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
       {
         test: /\.(less|css)$/,
-        include: [resolve('../client'), resolve('../node_modules/element-ui/lib/theme-chalk')],
+        exclude: /node_modules/,
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
