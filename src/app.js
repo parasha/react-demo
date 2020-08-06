@@ -13,9 +13,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div id='app'>
-        <Routes></Routes>
-      </div>
+      <Routes></Routes>
     )
   }
 }

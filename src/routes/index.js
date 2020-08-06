@@ -5,16 +5,29 @@ import Index from '../pages/index';
 import Home from '../pages/home';
 import User from '../pages/user';
 
-class Routes extends React.Component {
 
-  render() {
-    return (
-      <BrowserRouter>
-          <Route path='/' exact component={Index} />
+
+function createRoutes(config) {
+
+  config.map(item=>{
+    return 
+  })
+
+  return class extends React.Component {
+
+    constructor(props) {
+      super(props)
+    }
+
+    render() {
+      return (
+        <BrowserRouter>
+          <Route path='/' component={Index} />
           <Route path="/home" component={Home} />
           <Route path="/user" component={User} />
-      </BrowserRouter>
-    )
+        </BrowserRouter>
+      )
+    }
   }
 }
 
