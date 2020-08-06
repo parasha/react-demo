@@ -13,6 +13,7 @@ module.exports = merge(baseConfig, {
     open: true,
     hot: true,
     quiet: true,
+    historyApiFallback: true,
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin() //热更新
