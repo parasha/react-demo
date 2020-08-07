@@ -1,13 +1,34 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux'
+import { switchPage } from '../store/index'
 
-
-class User extends React.Component{
-  render(){
+class User extends React.Component {
+  constructor(props) {
+    super(props)
+    console.log(this.props.match.params)
+  }
+  toHome() {
+    this.props.history.push('/home');
+    this.props.switchPage('/home')
+  }
+  render() {
     return (
-      <div><Link to="/">toHome</Link></div>
+      <div onClick={this.toHome.bind(this)}>toHome</div>
     )
   }
 }
 
-export default User;
+const mapStateToProps = (state) => {
+  return {
+    page: state.page
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    switchPage: bindActionCreators(switchPage, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(User);

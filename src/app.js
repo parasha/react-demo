@@ -1,9 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 
 import './common/less/reset.less';
 
 import Routes from './routes/index';
+
+import { store } from './store/index';
 
 class App extends React.Component {
 
@@ -13,7 +16,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <Routes></Routes>
+      <Provider store={store}>
+        <Routes></Routes>
+      </Provider>
     )
   }
 }

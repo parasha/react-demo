@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 import Index from '../pages/index';
 import Home from '../pages/home';
@@ -7,29 +7,24 @@ import User from '../pages/user';
 
 
 
-function createRoutes(config) {
+class Routes extends React.Component {
 
-  config.map(item=>{
-    return 
-  })
+  constructor(props) {
+    super(props)
+  }
 
-  return class extends React.Component {
-
-    constructor(props) {
-      super(props)
-    }
-
-    render() {
-      return (
-        <BrowserRouter>
-          <Route path='/' component={Index} />
-          <Route path="/home" component={Home} />
-          <Route path="/user" component={User} />
-        </BrowserRouter>
-      )
-    }
+  render() {
+    return (
+      <BrowserRouter>
+        <Route path='/' render={() => (
+          <Index>
+            <Route path="/home" component={Home} />
+            <Route path="/user/:id" component={User} />
+          </Index>
+        )} />
+      </BrowserRouter>
+    )
   }
 }
-
 
 export default Routes;
