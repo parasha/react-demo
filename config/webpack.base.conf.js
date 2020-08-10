@@ -14,7 +14,8 @@ const config = {
   },
   output: {
     path: resolve('../dist'),
-    filename: 'js/[name].[hash:8].js'
+    filename: 'js/[name].[hash:8].js',
+    publicPath: '/'
   },
   module: {
     rules: [
