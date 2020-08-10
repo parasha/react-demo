@@ -1,27 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 import { switchPage } from '../store/index'
 
-class Index extends React.Component {
-  constructor(props) {
-    super(props)
-    console.log(this.props.children)
+
+function Index(props) {
+  const [count, setCount] = useState(0);
+
+  const toUser = () => {
+    props.switchPage('/user/1')
   }
-  toUser() {
-    this.props.switchPage('/user/1')
+
+  const addCount = ()=>{
+    setCount(count + 1)
   }
-  render() {
-    return (
-      <div>
-        store page: {this.props.page}
-        <div onClick={this.toUser.bind(this)}><Link to="/user/1">toUser1</Link></div>
-        <hr />
-        {this.props.children}
-      </div>
-    )
-  }
+
+  return (
+    <div>
+      store page: {props.page}
+      <br />
+        hook: {count}
+      <button onClick={addCount}>+1</button>
+      <div onClick={toUser}><Link to="/user/1">toUser1</Link></div>
+      <hr />
+      {props.children}
+    </div>
+  )
 }
 
 const mapStateToProps = (state) => {

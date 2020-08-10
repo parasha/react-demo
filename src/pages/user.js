@@ -3,20 +3,17 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 import { switchPage } from '../store/index'
 
-class User extends React.Component {
-  constructor(props) {
-    super(props)
-    console.log(this.props.match.params)
+function User(props){
+  console.log('constructor:', props.match.params)
+
+  const toHome = () => {
+    props.history.push('/home');
+    props.switchPage('/home')
   }
-  toHome() {
-    this.props.history.push('/home');
-    this.props.switchPage('/home')
-  }
-  render() {
-    return (
-      <div onClick={this.toHome.bind(this)}>toHome</div>
-    )
-  }
+
+  return (
+    <div onClick={toHome}>toHome</div>
+  )
 }
 
 const mapStateToProps = (state) => {
