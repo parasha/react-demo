@@ -24,15 +24,19 @@ const config = {
         use: ['babel-loader'],
         exclude: /node_modules/
       },
-      { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "babel-loader"
+      },
       {
         test: /\.(less|css)$/,
-        exclude: /node_modules/,
+        // exclude: /node_modules/,
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
           'postcss-loader',
-          'less-loader',
+          { loader: 'less-loader', options: { lessOptions: { javascriptEnabled: true } } },
         ]
       },
       {

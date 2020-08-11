@@ -11,7 +11,7 @@ module.exports = merge(baseConfig, {
     // https: true,
     open: true,
     hot: true,
-    quiet: true,
+    // quiet: true,
     historyApiFallback: true,
   },
   plugins: [

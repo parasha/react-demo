@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
 import './common/less/reset.less';
+import 'antd/dist/antd.less'
 
 import Routes from './routes/index';
 
