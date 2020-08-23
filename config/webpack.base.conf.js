@@ -10,7 +10,8 @@ const optimization = require('./splitChunks')
 const config = {
   // 入口
   entry: {
-    main: resolve('../src/app.js'),
+    // main: resolve('../src/app.js'),
+    main: resolve('../src/index.tsx'),
   },
   output: {
     path: resolve('../dist'),
@@ -19,13 +20,9 @@ const config = {
   },
   module: {
     rules: [
+      { test: /\.(tsx|ts)?$/, loader: "awesome-typescript-loader" },
       {
-        test: /\.jsx?$/,
-        use: ['babel-loader'],
-        exclude: /node_modules/
-      },
-      {
-        test: /\.js$/,
+        test: /\.(js|tsx)$/,
         exclude: /node_modules/,
         loader: "babel-loader"
       },
@@ -67,9 +64,9 @@ const config = {
     }),
   ],
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
     alias: {
-      '@': resolve('client'),
+      '@': resolve('../src'),
     }
   },
 }
