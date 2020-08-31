@@ -2,7 +2,7 @@ import React from 'react';
 import { Layout } from 'antd';
 const { Header, Content, Sider } = Layout;
 
-import SiderMenu from './SiderMenu'
+import SiderMenu from '../components/SiderMenu'
 
 function BasicLayout(props) {
 
