@@ -4,7 +4,7 @@ import * as ReactDOM from "react-dom";
 import { Provider } from 'react-redux';
 import { store } from './store/index';
 // router
-import Routes from './routes/index.tsx';
+import Routes from './routes/index';
 // CSS
 import './common/less/reset.less';
 import 'antd/dist/antd.less'

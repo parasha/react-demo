@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
+import * as React from 'react';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 import { switchPage } from '../store/index'
 
+const {useState, useEffect, useRef} = React;
 
 function Index(props) {
 

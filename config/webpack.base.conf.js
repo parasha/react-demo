@@ -22,7 +22,7 @@ const config = {
     rules: [
       { test: /\.(tsx|ts)?$/, loader: "awesome-typescript-loader" },
       {
-        test: /\.(js|tsx)$/,
+        test: /\.(js|ts|tsx)$/,
         exclude: /node_modules/,
         loader: "babel-loader"
       },

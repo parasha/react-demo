@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import * as React from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux'
-import { switchPage } from '../store/index'
+import { bindActionCreators } from 'redux';
+import { switchPage } from '../store/index';
+
+const { useState, useEffect } = React
 
 const Child = (props) => {
   console.log('child render')
@@ -35,7 +37,7 @@ function User(props) {
       setChild({ ...child }) // 必须这么写才能更新
     }, 1000)
 
-    return ()=>{
+    return () => {
       clearInterval(time)
     }
   }, [])

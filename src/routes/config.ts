@@ -1,4 +1,3 @@
-import BasicLayout from '../layout/BasicLayout';
 import Index from '../pages/index';
 import Home from '../pages/home';
 import User from '../pages/user';
