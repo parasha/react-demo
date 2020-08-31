@@ -1,7 +1,7 @@
 const path = require('path');
+const webpack = require('webpack');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");//提取css到单独文件的插件
 const htmlWebpackPlugin = require('html-webpack-plugin');
-
 
 const resolve = (url) => path.resolve(__dirname, url);
 
@@ -21,8 +21,8 @@ const config = {
     rules: [
       {
         test: /\.jsx?$/,
+        exclude: /node_modules/,
         use: ['babel-loader'],
-        exclude: /node_modules/
       },
       {
         test: /\.js$/,
@@ -34,7 +34,7 @@ const config = {
         // exclude: /node_modules/,
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader',
+          { loader: 'css-loader', options: { modules: true } },
           'postcss-loader',
           { loader: 'less-loader', options: { lessOptions: { javascriptEnabled: true } } },
         ]
@@ -57,6 +57,9 @@ const config = {
   },
   optimization,
   plugins: [
+    new webpack.DefinePlugin({
+      'APP_ENV': JSON.stringify(process.env.APP_ENV)
+    }),
     new MiniCssExtractPlugin({
       filename: "css/[name].[hash:6].css",//都提到build目录下的css目录中
     }),
@@ -67,9 +70,9 @@ const config = {
     }),
   ],
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js', 'jsx', '.json'],
     alias: {
-      '@': resolve('client'),
+      '@': resolve('../src'),
     }
   },
 }
