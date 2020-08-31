@@ -1,14 +1,20 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-// import { Provider } from 'react-redux';
-
+// redux
+import { Provider } from 'react-redux';
+import { store } from './store/index';
+// router
+import Routes from './routes/index.tsx';
+// CSS
 import './common/less/reset.less';
 import 'antd/dist/antd.less'
 
 function App() {
 
   return (
-    <div>React X TypeScript</div>
+    <Provider store={store}>
+      <Routes />
+    </Provider>
   )
 }
 

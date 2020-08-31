@@ -31,7 +31,7 @@ const config = {
         // exclude: /node_modules/,
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader',
+          { loader: 'css-loader', options: { modules: true, } },
           'postcss-loader',
           { loader: 'less-loader', options: { lessOptions: { javascriptEnabled: true } } },
         ]
