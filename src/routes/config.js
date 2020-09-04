@@ -1,7 +1,8 @@
-import BasicLayout from '../layout/BasicLayout';
+// import BasicLayout from '../layout/BasicLayout';
 import Index from '../pages/index';
 import Home from '../pages/home';
 import User from '../pages/user';
+import Hook from '../pages/hook';
 
 const routes = [
   {
@@ -18,6 +19,11 @@ const routes = [
         path: '/user/:id',
         name: 'user',
         component: User,
+      },
+      {
+        path: '/hook',
+        name: 'hook',
+        component: Hook,
       }
     ]
   }

@@ -6,9 +6,9 @@ import { switchPage } from '../store/index'
 
 
 function Index(props) {
-
-  const toUser = () => {
-    props.switchPage('/user/1')
+  console.log(props)
+  const switchPage = (url) => {
+    props.switchPage(url)
   }
 
   const [count, setCount] = useState(0);
@@ -49,7 +49,11 @@ function Index(props) {
       <button onClick={addCount}>+1</button>
       <button onClick={addCount2}>+1</button>
 
-      <div onClick={toUser}><Link to="/user/1">toUser1</Link></div>
+      <div onClick={()=>switchPage('/user/1')}><Link to="/user/1">toUser1</Link></div>
+      <div onClick={()=>switchPage('/hook')}><Link to="/hook">toHook</Link></div>
+      <div onClick={()=>switchPage('/home')}><Link to="/home">toHome</Link></div>
+
+
       <hr />
       {props.children}
     </div>
