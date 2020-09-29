@@ -3,6 +3,7 @@ import Index from '../pages/index';
 import Home from '../pages/home';
 import User from '../pages/user';
 import Hook from '../pages/hook';
+import Tab from '../pages/tab/index';
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
         path: '/hook',
         name: 'hook',
         component: Hook,
+      },
+      {
+        path: '/tab',
+        name: 'tab',
+        component: Tab,
       }
     ]
   }

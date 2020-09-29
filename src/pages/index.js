@@ -6,7 +6,7 @@ import { switchPage } from '../store/index'
 
 
 function Index(props) {
-  console.log(props)
+  console.log('index props：',props)
   const switchPage = (url) => {
     props.switchPage(url)
   }
@@ -52,7 +52,7 @@ function Index(props) {
       <div onClick={()=>switchPage('/user/1')}><Link to="/user/1">toUser1</Link></div>
       <div onClick={()=>switchPage('/hook')}><Link to="/hook">toHook</Link></div>
       <div onClick={()=>switchPage('/home')}><Link to="/home">toHome</Link></div>
-
+      <div onClick={()=>switchPage('/tab')}><Link to="/tab">toTab</Link></div>
 
       <hr />
       {props.children}
