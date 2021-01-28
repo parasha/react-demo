@@ -6,7 +6,7 @@ import { switchPage } from '../store/index'
 
 
 function Index(props) {
-  console.log('index props：',props)
+  console.log('index props：', props)
   const switchPage = (url) => {
     props.switchPage(url)
   }
@@ -25,14 +25,14 @@ function Index(props) {
 
   useEffect(() => {
     console.log('副作用')
-    return ()=>{
+    return () => {
       console.log('副作用清除');
     }
   }, [count]);
 
   useEffect(() => {
     console.log('副作用2')
-    return ()=>{
+    return () => {
       console.log('副作用2清除');
     }
   }, [count2]);
@@ -49,10 +49,11 @@ function Index(props) {
       <button onClick={addCount}>+1</button>
       <button onClick={addCount2}>+1</button>
 
-      <div onClick={()=>switchPage('/user/1')}><Link to="/user/1">toUser1</Link></div>
-      <div onClick={()=>switchPage('/hook')}><Link to="/hook">toHook</Link></div>
-      <div onClick={()=>switchPage('/home')}><Link to="/home">toHome</Link></div>
-      <div onClick={()=>switchPage('/tab')}><Link to="/tab">toTab</Link></div>
+      <div onClick={() => switchPage('/user/1')}><Link to="/user/1">toUser1</Link></div>
+      <div onClick={() => switchPage('/hook')}><Link to="/hook">toHook</Link></div>
+      <div onClick={() => switchPage('/home')}><Link to="/home">toHome</Link></div>
+      <div onClick={() => switchPage('/tab')}><Link to="/tab">toTab</Link></div>
+      <div onClick={() => switchPage('/children')}><Link to="/children">toChildren</Link></div>
 
       <hr />
       {props.children}
