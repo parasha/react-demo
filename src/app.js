@@ -9,11 +9,8 @@ import { store } from './store/index';
 
 
 import Index from './pages/index';
-import Home from './pages/home';
-import User from './pages/user';
-import Hook from './pages/hook';
-import Tab from './pages/tab/index';
-import Children from './pages/children';
+import HookPage from './pages/hook';
+import MC from './pages/memo&callback';
 
 import './common/less/reset.less';
 import 'antd/dist/antd.less'
@@ -28,11 +25,8 @@ function App() {
       <Router>
         <Index>
           <Switch>
-            <Route path='/home' component={Home} />
-            <Route path='/user' component={User} />
-            <Route path='/hook' component={Hook} />
-            <Route path='/tab' component={Tab} />
-            <Route path='children' component={Children}></Route>
+            <Route path='/hook/:id' component={HookPage} />
+            <Route path='/mc' component={MC} />
           </Switch>
         </Index>
       </Router>
