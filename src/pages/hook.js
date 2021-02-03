@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
-import { switchPage } from '../store/index'
+import { switchPage } from '../store/redux'
 
 const Child = (props) => {
   console.log('child render')

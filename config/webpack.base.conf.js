@@ -10,7 +10,7 @@ const optimization = require('./splitChunks')
 const config = {
   // 入口
   entry: {
-    main: resolve('../src/app.js'),
+    main: resolve('../src/app.tsx'),
   },
   output: {
     path: resolve('../dist'),
@@ -20,14 +20,14 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        use: ['babel-loader'],
-      },
-      {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         loader: "babel-loader"
+      },
+      {
+        test: /\.(ts|tsx)$/,
+        exclude: /node_modules/,
+        loader: "ts-loader"
       },
       {
         test: /\.(less|css)$/,
