@@ -1,12 +1,11 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "outDir": "./dist",
+    "outDir": "dist",
     "paths": {
-      "@/*": ["src/*"]
+      "@": ["./src"]
     },
-    "declaration": true,
-    "target": "esnext",
+    "target": "es5",
     "module": "esnext",
     "moduleResolution": "node",
     "jsx": "react",
@@ -20,6 +19,7 @@
     "src/**/*.tsx",
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "config"
   ]
 }

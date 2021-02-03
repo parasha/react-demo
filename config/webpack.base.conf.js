@@ -70,7 +70,7 @@ const config = {
     }),
   ],
   resolve: {
-    extensions: ['.js', 'jsx', '.json'],
+    extensions: ['.js', 'jsx', '.json', '.ts', '.tsx'],
     alias: {
       '@': resolve('../src'),
     }

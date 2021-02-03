@@ -12,6 +12,11 @@ import Index from './pages/index';
 import HookPage from './pages/hook';
 import MC from './pages/memo&callback';
 
+// test
+import Dog from './store/mobx';
+const dog = new Dog();
+console.log(dog.bark());
+
 import './common/less/reset.less';
 import 'antd/dist/antd.less'
 
