@@ -13,9 +13,14 @@ import HookPage from './pages/hook';
 import MC from './pages/memo&callback';
 
 // test
-import Dog from './store/mobx';
+import {Dog, xiaoming} from './store/装饰器';
 const dog = new Dog();
 console.log(dog.bark());
+
+console.log('can fly:',xiaoming.toString());
+console.log((2).toString());
+console.log(new Number(2).toString());
+
 
 import './common/less/reset.less';
 import 'antd/dist/antd.less'
